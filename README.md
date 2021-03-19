@@ -4,7 +4,7 @@
 <h1 align="center">Themegen</h1>
 <h3 align="center">Easily generate colour shades for a theme</h3>
 
-####Installation
+#### Installation
 
 ```
 yarn add themegen
@@ -16,7 +16,7 @@ or
 npm i themegen
 ```
 
-####Usage
+#### Usage
 
 ```(typescript)
 import { GenerateShades } from "themegen";
@@ -80,7 +80,7 @@ Will generate:
 }
 ```
 
-####Parameters
+#### Parameters
 
 - `shades` - An object containing keys `PRIMARY` and `SECONDARY` keys, as well as optional `TERTIARY`, `ERROR`, `DARK`, and `LIGHT` keys. Each key represents a colour to generate shades for.
 - `outputMode` [optional] [default: `rgba`] - `hex` | `rgb` | `rgba` - the output mode for the colours and shades.
