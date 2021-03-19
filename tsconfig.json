@@ -5,6 +5,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "experimentalDecorators": true,
+    "declaration": true,
     "sourceMap": false,
     "target": "ES2017",
     "outDir": "build",

@@ -1,0 +1,1 @@
+export { GenerateShades } from "./Shades";
