@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "sourceMap": false,
+    "target": "ES2017",
+    "outDir": "build",
+    "baseUrl": "./src/",
+    "plugins": []
+  },
+  "include": ["./**/*.ts", "./**/*.json", "./**/*.txt", "./**/*.html"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "package.json",
+    "tsconfig.json",
+    "package-lock.json",
+    "eslintrc.json",
+    ".prettierrc",
+    "test/**/*.*"
+  ]
+}
