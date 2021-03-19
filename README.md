@@ -19,9 +19,9 @@ npm i themegen
 #### Usage
 
 ```(typescript)
-import { GenerateShades } from "themegen";
+import { GenerateShades, IShadesResult } from "themegen";
 
-const theme = GenerateShades({
+const theme: IShadesResult = GenerateShades({
   shades: {
     PRIMARY: "#CC99CC",
     SECONDARY: "#99CC99",
