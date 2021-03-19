@@ -1,6 +1,6 @@
 {
   "name": "themegen",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Generate colour themes automatically",
   "main": "build/index.js",
   "types": "build/index.d.ts",
