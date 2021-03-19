@@ -7,19 +7,19 @@
 #### Installation
 
 ```
-yarn add themegen
+yarn add js-themegen
 ```
 
 or
 
 ```
-npm i themegen
+npm i js-themegen
 ```
 
 #### Usage
 
 ```(typescript)
-import { GenerateShades, TShadesResult } from "themegen";
+import { GenerateShades, TShadesResult } from "js-themegen";
 
 const theme: TShadesResult = GenerateShades({
   shades: {

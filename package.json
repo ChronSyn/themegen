@@ -1,5 +1,5 @@
 {
-  "name": "themegen",
+  "name": "js-themegen",
   "version": "0.0.5",
   "author": {
     "name": "Scott Pritchard <ChronSyn>",
@@ -10,6 +10,7 @@
   "description": "Generate colour themes automatically",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "private": false,
   "files": [
     "build/**/*"
   ],
