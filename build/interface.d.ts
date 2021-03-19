@@ -27,7 +27,7 @@ export interface IArgs {
 export declare type TShadeVariants = "DARKER" | "LIGHTER";
 export declare type TRequiredShades = "PRIMARY" | "SECONDARY";
 export declare type TOptionalShades = "PRIMARY" | "SECONDARY" | "TERTIARY" | "ERROR" | "DARK" | "LIGHT";
-export declare type TShadeDynamicKey = `${TRequiredShades | TOptionalShades}_${TShadeVariants}_${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10}`;
+export declare type TShadeDynamicKey = `${TRequiredShades | TOptionalShades}_${TShadeVariants}_${number}`;
 export declare type IShadesResult = {
     [key in TOptionalShades]?: string;
 } & {

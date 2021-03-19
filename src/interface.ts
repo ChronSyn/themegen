@@ -46,7 +46,7 @@ export type TOptionalShades =
   | "DARK"
   | "LIGHT";
 
-export type TShadeDynamicKey = `${TRequiredShades | TOptionalShades}_${TShadeVariants}_${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10}`;
+export type TShadeDynamicKey = `${TRequiredShades | TOptionalShades}_${TShadeVariants}_${number}`;
 
 export type IShadesResult = {
   [key in TOptionalShades]?: string;
