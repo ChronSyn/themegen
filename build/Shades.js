@@ -28,6 +28,7 @@ const DarkerShade = (color, factor, outputMode) => {
 const GenerateShades = ({ shades, outputMode = "rgba", factor = 0.2, darkerShadesToGenerate = 3, lighterShadesToGenerate = 3, }) => {
     const darkerShades = new Array(darkerShadesToGenerate).fill(null);
     const lighterShades = new Array(lighterShadesToGenerate).fill(null);
+    //@ts-ignore
     let out = {};
     Object.entries(shades).forEach(([key, color]) => {
         const D = {};

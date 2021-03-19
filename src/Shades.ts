@@ -41,7 +41,8 @@ export const GenerateShades = ({
   const darkerShades = new Array(darkerShadesToGenerate).fill(null);
   const lighterShades = new Array(lighterShadesToGenerate).fill(null);
 
-  let out = {} as TShadesResult;
+  //@ts-ignore
+  let out: TShadesResult = {};
   Object.entries(shades).forEach(([key, color]) => {
     const D = {};
     const L = {};

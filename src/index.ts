@@ -7,5 +7,6 @@ export {
   TRequiredShades,
   TShadeVariants,
   IShades,
-  IShadesResult,
+  TShadesResult,
+  TNumber,
 } from "./interface";
