@@ -46,13 +46,37 @@ export type TOptionalShades =
   | "DARK"
   | "LIGHT";
 
-export type TShadeDynamicKey = `${TRequiredShades | TOptionalShades}_${TShadeVariants}_${number}`;
+export type TNumber =
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 11
+  | 12
+  | 13
+  | 14
+  | 15
+  | 16
+  | 17
+  | 18
+  | 19
+  | 20;
 
-export type IShadesResult = {
-  [key in TOptionalShades]?: string;
+export type TShadeDynamicKey = `${
+  | TRequiredShades
+  | TOptionalShades}_${TShadeVariants}_${TNumber}`;
+
+export type TShadesResult = {
+  [key in TRequiredShades]: string;
 } &
   {
-    [key in TRequiredShades]: string;
+    [key in TOptionalShades]?: string;
   } &
   {
     [key in TShadeDynamicKey]?: string;

@@ -1,5 +1,5 @@
 import Chroma from "chroma-js";
-import { IArgs, IShadesResult, TOutputMode } from "interface";
+import { IArgs, TShadesResult, TOutputMode } from "interface";
 
 const LighterShade = (
   color: string,
@@ -37,11 +37,11 @@ export const GenerateShades = ({
   factor = 0.2,
   darkerShadesToGenerate = 3,
   lighterShadesToGenerate = 3,
-}: IArgs): IShadesResult => {
+}: IArgs): TShadesResult => {
   const darkerShades = new Array(darkerShadesToGenerate).fill(null);
   const lighterShades = new Array(lighterShadesToGenerate).fill(null);
 
-  let out = {} as IShadesResult;
+  let out = {} as TShadesResult;
   Object.entries(shades).forEach(([key, color]) => {
     const D = {};
     const L = {};

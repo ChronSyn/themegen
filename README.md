@@ -87,3 +87,23 @@ Will generate:
 - `factor` [optional] [default: 0.2] - The factor by which to adjust shades. Higher number = more extreme difference between shades
 - `darkerShadesToGenerate` [optional] [default: 3] - The number of darker shades to generate for each colour
 - `lighterShadesToGenerate` [optional] [default: 3] - The number of lighter shades to generate for each colour
+
+#### Caveats
+
+**Typescript 4.1 or greater required**
+
+Due to limitations of typescript and it's template literal types, it will only provide type suggestions for **up to 20 lighter shades and 20 darker shades**.
+This means that if you are generating 21 darker shades and 21 lighter shades, only shades 1 through to 20 will be suggested.
+Likewise, even if you only generate 3 darker shades and 3 lighter shades, it will suggest shades 1 through to 20.
+
+This is simply because it doesn't appear to be possible to specify `number` as part of the template literal, so I've had to manually specify numbers - I figured 20 shades would be more than enough for the majority of use cases.
+
+This means you could technically use a colour which isn't generated because you didn't generate enough shades.
+
+You can still technically use `PRIMARY_DARKER_28` if you happen to generate enough shades, but you will have to make use of `//@ts-ignore` to prevent TS from complaining.
+
+As always, use responsibly.
+
+#### Why?
+
+I've typically manually generated shades of colours and copied them into an interface to generate a theme. I decided it was time to do better.

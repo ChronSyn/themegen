@@ -1,2 +1,2 @@
-import { IArgs, IShadesResult } from "interface";
-export declare const GenerateShades: ({ shades, outputMode, factor, darkerShadesToGenerate, lighterShadesToGenerate, }: IArgs) => IShadesResult;
+import { IArgs, TShadesResult } from "interface";
+export declare const GenerateShades: ({ shades, outputMode, factor, darkerShadesToGenerate, lighterShadesToGenerate, }: IArgs) => TShadesResult;
