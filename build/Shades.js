@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenerateShades = void 0;
 const chroma_js_1 = __importDefault(require("chroma-js"));
+`${TShades}_${TShadeVariants}_${number}`;
 const LighterShade = (color, factor, outputMode) => {
     switch (outputMode) {
         case "rgb":
@@ -28,7 +29,6 @@ const DarkerShade = (color, factor, outputMode) => {
 exports.GenerateShades = ({ shades, outputMode = "rgba", factor = 0.2, darkerShadesToGenerate = 3, lighterShadesToGenerate = 3, }) => {
     const darkerShades = new Array(darkerShadesToGenerate).fill(null);
     const lighterShades = new Array(lighterShadesToGenerate).fill(null);
-    console.log({ darkerShades, lighterShades });
     let out = {};
     Object.entries(shades).forEach(([key, color]) => {
         const D = {};

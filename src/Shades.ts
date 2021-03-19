@@ -38,6 +38,28 @@ interface IArgs {
   darkerShadesToGenerate?: number;
 }
 
+type TShadeVariants = "DARKER" | "LIGHTER";
+type TShades =
+  | "PRIMARY"
+  | "SECONDARY"
+  | "TERTIARY"
+  | "ERROR"
+  | "DARK"
+  | "LIGHT";
+type TShadeDynamicKey = `${TShades}_${TShadeVariants}_${number}`;
+
+type IShadesResult = {
+  [key in TShadeDynamicKey]?: string;
+} & {
+  PRIMARY: string;
+
+  SECONDARY: string;
+  TERTIARY?: string;
+  ERROR?: string;
+  DARK?: string;
+  LIGHT?: string;
+};
+
 const LighterShade = (
   color: string,
   factor: number,
@@ -74,13 +96,11 @@ export const GenerateShades = ({
   factor = 0.2,
   darkerShadesToGenerate = 3,
   lighterShadesToGenerate = 3,
-}: IArgs) => {
+}: IArgs): IShadesResult => {
   const darkerShades = new Array(darkerShadesToGenerate).fill(null);
   const lighterShades = new Array(lighterShadesToGenerate).fill(null);
 
-  console.log({ darkerShades, lighterShades });
-
-  let out = {};
+  let out = {} as IShadesResult;
   Object.entries(shades).forEach(([key, color]) => {
     const D = {};
     const L = {};
