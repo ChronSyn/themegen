@@ -1,4 +1,4 @@
-export declare type TOutputMode = "rgba" | "rgb" | "hex";
+export declare type TOutputMode = "rgba" | "rgb" | "hex" | "hsl";
 export interface IShades {
     /** The primary color */
     PRIMARY: string;
@@ -6,6 +6,12 @@ export interface IShades {
     SECONDARY: string;
     /** The (optional) tertiary color */
     TERTIARY?: string;
+    /** The (optional) success color */
+    SUCCESS?: string;
+    /** The (optional) info color */
+    INFO?: string;
+    /** The (optional) warning color */
+    WARNING?: string;
     /** The (optional) error color */
     ERROR?: string;
     /** The (optional) dark color */
@@ -26,7 +32,7 @@ export interface IArgs {
 }
 export declare type TShadeVariants = "DARKER" | "LIGHTER";
 export declare type TRequiredShades = "PRIMARY" | "SECONDARY";
-export declare type TOptionalShades = "PRIMARY" | "SECONDARY" | "TERTIARY" | "ERROR" | "DARK" | "LIGHT";
+export declare type TOptionalShades = "PRIMARY" | "SECONDARY" | "TERTIARY" | "SUCCESS" | "INFO" | "WARNING" | "ERROR" | "DARK" | "LIGHT";
 export declare type TNumber = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20;
 export declare type TShadeDynamicKey = `${TRequiredShades | TOptionalShades}_${TShadeVariants}_${TNumber}`;
 export declare type TShadesResult = {

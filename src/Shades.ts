@@ -4,7 +4,7 @@ import { IArgs, TShadesResult, TOutputMode } from "interface";
 const LighterShade = (
   color: string,
   factor: number,
-  outputMode?: TOutputMode
+  outputMode: TOutputMode = "rgba"
 ) => {
   switch (outputMode) {
     case "rgb":
@@ -13,13 +13,15 @@ const LighterShade = (
       return `rgba(${Chroma(color).brighten(factor).rgba(true).join(",")})`;
     case "hex":
       return `${Chroma(color).brighten(factor).hex()}`;
+    case "hsl":
+      return `${Chroma(color).brighten(factor).hsl()}`;
   }
 };
 
 const DarkerShade = (
   color: string,
   factor: number,
-  outputMode?: TOutputMode
+  outputMode: TOutputMode = "rgba"
 ) => {
   switch (outputMode) {
     case "rgb":
@@ -28,6 +30,8 @@ const DarkerShade = (
       return `rgba(${Chroma(color).darken(factor).rgba(true).join(",")})`;
     case "hex":
       return `${Chroma(color).darken(factor).hex()}`;
+    case "hsl":
+      return `${Chroma(color).darken(factor).hsl()}`;
   }
 };
 

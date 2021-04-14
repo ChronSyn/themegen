@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenerateShades = void 0;
 const chroma_js_1 = __importDefault(require("chroma-js"));
-const LighterShade = (color, factor, outputMode) => {
+const LighterShade = (color, factor, outputMode = "rgba") => {
     switch (outputMode) {
         case "rgb":
             return `rgb(${chroma_js_1.default(color).brighten(factor).rgb(true).join(",")})`;
@@ -13,9 +13,11 @@ const LighterShade = (color, factor, outputMode) => {
             return `rgba(${chroma_js_1.default(color).brighten(factor).rgba(true).join(",")})`;
         case "hex":
             return `${chroma_js_1.default(color).brighten(factor).hex()}`;
+        case "hsl":
+            return `${chroma_js_1.default(color).brighten(factor).hsl()}`;
     }
 };
-const DarkerShade = (color, factor, outputMode) => {
+const DarkerShade = (color, factor, outputMode = "rgba") => {
     switch (outputMode) {
         case "rgb":
             return `rgb(${chroma_js_1.default(color).darken(factor).rgb(true).join(",")})`;
@@ -23,6 +25,8 @@ const DarkerShade = (color, factor, outputMode) => {
             return `rgba(${chroma_js_1.default(color).darken(factor).rgba(true).join(",")})`;
         case "hex":
             return `${chroma_js_1.default(color).darken(factor).hex()}`;
+        case "hsl":
+            return `${chroma_js_1.default(color).darken(factor).hsl()}`;
     }
 };
 const GenerateShades = ({ shades, outputMode = "rgba", factor = 0.2, darkerShadesToGenerate = 3, lighterShadesToGenerate = 3, }) => {

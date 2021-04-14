@@ -1,4 +1,4 @@
-export type TOutputMode = "rgba" | "rgb" | "hex";
+export type TOutputMode = "rgba" | "rgb" | "hex" | "hsl";
 
 export interface IShades {
   /** The primary color */
@@ -9,6 +9,15 @@ export interface IShades {
 
   /** The (optional) tertiary color */
   TERTIARY?: string;
+
+  /** The (optional) success color */
+  SUCCESS?: string;
+
+  /** The (optional) info color */
+  INFO?: string;
+
+  /** The (optional) warning color */
+  WARNING?: string;
 
   /** The (optional) error color */
   ERROR?: string;
@@ -42,6 +51,9 @@ export type TOptionalShades =
   | "PRIMARY"
   | "SECONDARY"
   | "TERTIARY"
+  | "SUCCESS"
+  | "INFO"
+  | "WARNING"
   | "ERROR"
   | "DARK"
   | "LIGHT";
