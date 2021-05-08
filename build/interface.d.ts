@@ -1,4 +1,4 @@
-export declare type TOutputMode = "rgba" | "rgb" | "hex" | "hsl";
+export declare type TOutputMode = "rgba" | "rgb" | "hex" | "hsl" | "channels";
 export interface IShades {
     /** The primary color */
     PRIMARY: string;

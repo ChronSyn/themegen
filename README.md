@@ -113,10 +113,22 @@ Will generate:
 #### Parameters
 
 - `shades` - An object containing keys `PRIMARY` and `SECONDARY` keys, as well as optional `TERTIARY`, `ERROR`, `SUCCESS`, `WARNING`, `INFO`, `DARK`, and `LIGHT` keys. Each key represents a colour to generate shades for.
-- `outputMode` [optional] [default: `rgba`] - `hex` | `rgb` | `rgba` | `hsl` - the output mode for the colours and shades.
+- `outputMode` [optional] [default: `rgba`] - `hex` | `rgb` | `rgba` | `hsl` | `channels` - the output mode for the colours and shades.
 - `factor` [optional] [default: 0.2] - The factor by which to adjust shades. Higher number = more extreme difference between shades
 - `darkerShadesToGenerate` [optional] [default: 3] - The number of darker shades to generate for each colour
 - `lighterShadesToGenerate` [optional] [default: 3] - The number of lighter shades to generate for each colour
+
+#### Output modes
+
+The `outputMode` options are mostly self-explanatory, but here's a refresher:
+
+- `hex` - Returns the hexadecimal representation of the colour
+- `rgb` - Returns the RGB (red, green, blue) representation of the colour
+- `rgba` - Returns the RGBA (red, green, blue, alpha) representation of the colour
+- `hsl` - Returns the HSL (hue, saturation, light) representation of the colour
+- `channels` - Returns the individual channels of the colour as an array of RGB channel values
+
+`channels` is useful if you want integrate a colour into a third-party library which may not offer as much configuration as you'd like.
 
 #### Caveats
 
@@ -131,6 +143,8 @@ This is simply because it doesn't appear to be possible to specify `number` as p
 This means you could technically use a colour which isn't generated because you didn't generate enough shades.
 
 You can still technically use `PRIMARY_DARKER_28` if you happen to generate enough shades, but you will have to make use of `//@ts-ignore` to prevent TS from complaining.
+
+Likewise, if you only generate 3 shades, and try to use a shade like `PRIMARY_DARKER_5`, you'll possibly experience an error as it's undefined.
 
 As always, use responsibly.
 

@@ -15,6 +15,12 @@ const LighterShade = (color, factor, outputMode = "rgba") => {
             return `${chroma_js_1.default(color).brighten(factor).hex()}`;
         case "hsl":
             return `${chroma_js_1.default(color).brighten(factor).hsl()}`;
+        case "channels":
+            return [
+                chroma_js_1.default(color).brighten(factor).get("rgb.r"),
+                chroma_js_1.default(color).brighten(factor).get("rgb.g"),
+                chroma_js_1.default(color).brighten(factor).get("rgb.b"),
+            ];
     }
 };
 const DarkerShade = (color, factor, outputMode = "rgba") => {
@@ -27,6 +33,12 @@ const DarkerShade = (color, factor, outputMode = "rgba") => {
             return `${chroma_js_1.default(color).darken(factor).hex()}`;
         case "hsl":
             return `${chroma_js_1.default(color).darken(factor).hsl()}`;
+        case "channels":
+            return [
+                chroma_js_1.default(color).darken(factor).get("rgb.r"),
+                chroma_js_1.default(color).darken(factor).get("rgb.g"),
+                chroma_js_1.default(color).darken(factor).get("rgb.b"),
+            ];
     }
 };
 const GenerateShades = ({ shades, outputMode = "rgba", factor = 0.2, darkerShadesToGenerate = 3, lighterShadesToGenerate = 3, }) => {

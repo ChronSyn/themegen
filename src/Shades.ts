@@ -15,6 +15,12 @@ const LighterShade = (
       return `${Chroma(color).brighten(factor).hex()}`;
     case "hsl":
       return `${Chroma(color).brighten(factor).hsl()}`;
+    case "channels":
+      return [
+        Chroma(color).brighten(factor).get("rgb.r"),
+        Chroma(color).brighten(factor).get("rgb.g"),
+        Chroma(color).brighten(factor).get("rgb.b"),
+      ];
   }
 };
 
@@ -32,6 +38,12 @@ const DarkerShade = (
       return `${Chroma(color).darken(factor).hex()}`;
     case "hsl":
       return `${Chroma(color).darken(factor).hsl()}`;
+    case "channels":
+      return [
+        Chroma(color).darken(factor).get("rgb.r"),
+        Chroma(color).darken(factor).get("rgb.g"),
+        Chroma(color).darken(factor).get("rgb.b"),
+      ];
   }
 };
 
